@@ -26,7 +26,7 @@
 # 	print('size:' + str(s.size()))
 
 
-class Solution(object):
+class aaa(object):
     def largestRectangleArea(heights):
         """
         :type heights: List[int]
@@ -35,14 +35,12 @@ class Solution(object):
         res = 0
         stack = list()
         heights = [0] + heights + [0]
-
         for i in range(len(heights)):
             while stack and heights[stack[-1]] > heights[i]:
                 top = stack.pop()
                 res = max(res, (i - stack[-1] - 1) * heights[top])
-
             stack.append(i)
         print(res)
         return res
 
-Solution.largestRectangleArea([2,1,2,3,1,3])
+aaa.largestRectangleArea([2,1,5,5,6,3])
